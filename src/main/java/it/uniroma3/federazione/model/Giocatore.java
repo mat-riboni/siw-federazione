@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Giocatore {
@@ -26,6 +27,7 @@ public class Giocatore {
 	
 	private LocalDate dataNascita;
 	
+	@ManyToOne
 	@JoinColumn(name = "squadra_id")
 	private Squadra squadra;
 

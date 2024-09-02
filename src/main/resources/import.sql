@@ -1,0 +1,10 @@
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra A', 'Sede A', 2000);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra B', 'Sede B', 2001);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra C', 'Sede C', 2002);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra D', 'Sede D', 2003);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra E', 'Sede E', 2004);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra F', 'Sede F', 2005);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra G', 'Sede G', 2006);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra H', 'Sede H', 2007);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra I', 'Sede I', 2008);
+INSERT INTO squadra (id,nome, sede, anno) VALUES (nextval('squadra_seq'),'Squadra J', 'Sede J', 2009);
