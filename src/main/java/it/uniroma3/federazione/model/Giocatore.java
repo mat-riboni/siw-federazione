@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Max;
 
 @Entity
 public class Giocatore {
@@ -21,15 +22,36 @@ public class Giocatore {
 	
 	private String nome;
 	
-	private String congome;
+	private String cognome;
 	
 	private String luogoNascita;
 	
 	private LocalDate dataNascita;
 	
+	@Max(value = 99)
+	private int numeroMaglia;
+	
+	private boolean titolare;
+	
 	@ManyToOne
 	@JoinColumn(name = "squadra_id")
 	private Squadra squadra;
+	
+	public int getNumeroMaglia() {
+		return numeroMaglia;
+	}
+
+	public void setNumeroMaglia(int numeroMaglia) {
+		this.numeroMaglia = numeroMaglia;
+	}
+
+	public boolean isTitolare() {
+		return titolare;
+	}
+
+	public void setTitolare(boolean titolare) {
+		this.titolare = titolare;
+	}
 
 	public Long getId() {
 		return id;
@@ -55,12 +77,12 @@ public class Giocatore {
 		this.nome = nome;
 	}
 
-	public String getCongome() {
-		return congome;
+	public String getCognome() {
+		return cognome;
 	}
 
-	public void setCongome(String congome) {
-		this.congome = congome;
+	public void setCognome(String congome) {
+		this.cognome = congome;
 	}
 
 	public String getLuogoNascita() {

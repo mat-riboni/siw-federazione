@@ -13,8 +13,21 @@ public class SquadraService{
 	@Autowired
 	private SquadraRepository squadraRepository;
 
+	public void save(Squadra squadra) {
+		squadraRepository.save(squadra);
+	}
+	
 	public Iterable<Squadra> getAll(){
 		return squadraRepository.findAll();
 	}
+	
+	public Squadra findSquadraById(Long id) {
+		return squadraRepository.findById(id).get();
+	}
+	
+	public Iterable<Squadra> find5squadre(){
+		return squadraRepository.findTop5ByOrderByIdAsc();
+	}
+	
 	
 }

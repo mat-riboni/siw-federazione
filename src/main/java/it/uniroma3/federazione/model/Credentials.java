@@ -22,10 +22,10 @@ public class Credentials {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@NotBlank
+	@NotBlank(message = "Username obbligatorio")
 	private String username;
 	
-	@NotBlank
+	@NotBlank(message = "Password obbligatoria")
 	private String password;
 	
 	private String role;

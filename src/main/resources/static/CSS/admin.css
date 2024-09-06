@@ -1,0 +1,199 @@
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.content{
+    background-color: rgb(254, 192, 137);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navbar{
+    background-color: rgb(255, 122, 33);
+    display: flex;
+    width:100%;
+    min-height: 50px;
+    height: 5vh;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.navbar>div{
+    color: white;
+    margin-left: 40px;
+    font-size: large;
+}
+
+.navbar>button{
+    margin-right: 40px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.navbar>button:hover{
+    background-color: rgb(255, 208, 155);
+}
+
+.container{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard{
+    background-color: white;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    min-width:200px;
+}
+
+
+.main{
+    flex:4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    width:100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.uk-list>li>span{
+    margin-right: 10px;
+}
+
+.gestione{
+    color:black;
+    font-size: large;
+    font-weight: bold;
+}
+
+.uk-list>li>a{
+    text-decoration: none;
+}
+
+.uk-list>li>a:hover{
+    font-size: 1.2rem;
+}
+
+.menu>a{
+	    color:rgb(101, 101, 101);
+}
+
+.stat{
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    color:white;
+    flex: 1;
+    margin: 0 15px;
+    height: 100px;
+}
+
+.left{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right{
+    flex:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.data{
+    font-size: 1.5rem;
+}
+
+.first{
+    background-color: rgb(233, 42, 74);
+}
+
+.second{
+    background-color: rgb(59, 180, 59);
+}
+
+.third{
+    background-color: rgb(3, 145, 217);
+}
+
+.fourth{background-color: rgb(61, 61, 61);}
+
+.lista-squadre{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgb(207, 207, 207);
+    padding:0 50px;
+}
+
+.list-item>a {
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.list-item>a:visited{
+    text-decoration: none;
+}
+
+.list-item>a:hover{
+    text-decoration: none;
+    font-size: larger;
+}
+
+.scudetto{
+    width:70px;
+    height: 70px;
+    border-radius: 35px;
+    object-fit: cover;
+}
+
+.vedi-tutte{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    width:100%;
+}
+
+.uk-input{
+	margin: 5px 0;
+}
+
+.uk-alert-danger{
+	width:70%;
+}
+
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Login</title>
 
 <!--CSS-->
@@ -21,9 +21,9 @@
             <p>Bentornato!</p>
         </div>
         
-        <form class="form" th:action="@{/login}" method="post">
+        <form class="form" action="/login" method="post">
           <input type="text" placeholder="Username" name="username"/>
-          <input type="password" placeholder="Password" password="password"/>
+          <input type="password" placeholder="Password" name="password"/>
           <button type="submit">Login</button>
         </form>
         <div class="bottom">

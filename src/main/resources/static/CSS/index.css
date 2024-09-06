@@ -185,7 +185,7 @@ button:hover {
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid rgb(207, 207, 207);
     padding:0 50px;
 }
@@ -194,9 +194,11 @@ button:hover {
     font-size: large;
     font-weight: bold;
     text-decoration: none;
+    color: black;
 }
 
-.list-item>a:visited{
+.list-item>a:visited,
+.list-item>a:active{
     color:black;
     text-decoration: none;
 }

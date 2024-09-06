@@ -41,7 +41,7 @@ public class AuthConfiguration {
         httpSecurity
         		.csrf(csfr ->csfr.disable())
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/", "/register","/CSS/**", "/images/**", "favicon.ico").permitAll()         
+                        .requestMatchers("/", "/register","/CSS/**", "/images/**", "/squadra/**", "favicon.ico", "/immaginePresidente/**").permitAll()         
                         .requestMatchers("/presidente/**").hasAuthority(Credentials.PRESIDENTE_ROLE)
                         .requestMatchers("/admin/**").hasAuthority(Credentials.ADMIN_ROLE)
                         .anyRequest().authenticated()

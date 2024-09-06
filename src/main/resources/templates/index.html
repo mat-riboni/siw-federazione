@@ -46,9 +46,9 @@
   </div>
   <ul class="lista-squadre">
     <li	th:each="squadra : ${squadre}" class="list-item">
-      <a href="#" th:text="${squadra.nome}">Nome Squadra</a>
+      <a th:href="@{/squadra/{id}(id=${squadra.id})}" th:text="${squadra.name}">Nome Squadra</a>
       <p th:text="${squadra.sede}">Via della seta 45, Roma</p>
-      <img class="scudetto" src="logo_squadra.jpg">
+      <img class="scudetto" th:src="@{/squadra/{id}/immagine(id=${squadra.id})}">
     </li>
   </ul>
   </body>

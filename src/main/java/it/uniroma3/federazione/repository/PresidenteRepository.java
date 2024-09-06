@@ -6,4 +6,5 @@ import it.uniroma3.federazione.model.Presidente;
 
 public interface PresidenteRepository extends CrudRepository<Presidente, Long> {
 
+	
 }

@@ -3,11 +3,13 @@ package it.uniroma3.federazione.model;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Presidente {
@@ -17,18 +19,33 @@ public class Presidente {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@NotBlank(message = "Nome del presidente obbligatorio")
 	private String nome;
 	
+	@NotBlank(message = "Cognome del presidente obbligatorio")
 	private String cognome;
 	
-	private String CodiceFiscale;
+	@NotBlank(message = "Codice fiscale obbligatorio")
+	private String codiceFiscale;
 	
-	private String LuogoNascita;
+	@NotBlank(message = "Luogo di nascita obbligatorio")
+	private String luogoNascita;
 	
 	private LocalDate dataNascita;
 	
 	@OneToOne(mappedBy = "presidente")
 	private Squadra squadra;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Image immagine;
+
+	public Image getImmagine() {
+		return immagine;
+	}
+
+	public void setImmagine(Image immagine) {
+		this.immagine = immagine;
+	}
 
 	public Squadra getSquadra() {
 		return squadra;
@@ -63,19 +80,19 @@ public class Presidente {
 	}
 
 	public String getCodiceFiscale() {
-		return CodiceFiscale;
+		return codiceFiscale;
 	}
 
 	public void setCodiceFiscale(String codiceFiscale) {
-		CodiceFiscale = codiceFiscale;
+		this.codiceFiscale = codiceFiscale;
 	}
 
 	public String getLuogoNascita() {
-		return LuogoNascita;
+		return luogoNascita;
 	}
 
 	public void setLuogoNascita(String luogoNascita) {
-		LuogoNascita = luogoNascita;
+		this.luogoNascita = luogoNascita;
 	}
 
 	public LocalDate getDataNascita() {
