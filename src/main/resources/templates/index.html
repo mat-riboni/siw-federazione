@@ -29,15 +29,17 @@
         </button>
     </div>
       <div class="logs">
-        <a href="/login">Login</a>
-        <button th:onclick="|window.location.href = '/register'|">Registrati</button>
+        <a th:unless="${isPresidente}" href="/login">Login</a>
+		<a th:if="${isPresidente}" href="/logout">Logout</a>
+        <button th:unless="${isPresidente}" th:onclick="|window.location.href = '/register'|">Registrati</button>
+		<button th:if="${isPresidente}" th:onclick="|window.location.href = '/squadra/' + ${squadraProprietarioId}|">Squadra</button>
       </div>
     </div>
     <div class="copertina">
       <div class="descrizione">
         <h2>Gestisci la tua squadra di basket!</h2>
         <div><p>Oppure richiedi di entrare nella lega</p>
-          <button>Registrati</button>
+		<button th:if="${isPresidente}" th:onclick="|window.location.href = '/squadra/' + ${squadraProprietarioId}|">Squadra</button>
         </div>
       </div>
       <div class="player">

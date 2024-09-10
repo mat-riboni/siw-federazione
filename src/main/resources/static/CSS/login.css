@@ -61,3 +61,7 @@ button:hover{
     display: flex;
     justify-content: space-around;
 }
+.errore{
+	color:rgb(231, 37, 27);
+	font-weight: bold;
+}

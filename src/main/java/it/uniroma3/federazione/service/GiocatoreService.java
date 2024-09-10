@@ -15,5 +15,9 @@ public class GiocatoreService {
 	public Iterable<Giocatore> getAll(){
 		return giocatoreRepository.findAll();
 	}
+	
+	public void save(Giocatore giocatore) {
+		giocatoreRepository.save(giocatore);
+	}
 
 }

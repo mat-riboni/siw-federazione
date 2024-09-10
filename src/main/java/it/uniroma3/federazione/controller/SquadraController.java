@@ -25,9 +25,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import it.uniroma3.federazione.model.Costanti;
 import it.uniroma3.federazione.model.Credentials;
+import it.uniroma3.federazione.model.FormazioneForm;
 import it.uniroma3.federazione.model.Giocatore;
 import it.uniroma3.federazione.model.Image;
 import it.uniroma3.federazione.model.Presidente;
@@ -58,6 +60,8 @@ public class SquadraController {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (authentication instanceof AnonymousAuthenticationToken) {
 			model.addAttribute("isAuthenticated", false);
+			model.addAttribute("isPresidente", false);
+			model.addAttribute("squadraProprietarioId", null);
 			model.addAttribute("squadre", squadraService.getAll());
 			return "index.html";
 		}
@@ -65,12 +69,18 @@ public class SquadraController {
 			UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
 			model.addAttribute("isAuthenticated", true);
+			model.addAttribute("isPresidente", false);
 			model.addAttribute("username", credentials.getUsername());
+			model.addAttribute("squadraProprietarioId", null);
 			if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
 				return "redirect:/admin";
 			}
 			if(credentials.getRole().equals(Credentials.PRESIDENTE_ROLE)) {
-				return "redirect:/presidente";
+				model.addAttribute("isAuthenticated", true);
+				model.addAttribute("isPresidente", true);
+				model.addAttribute("squadre", squadraService.getAll());
+				model.addAttribute("squadraProprietarioId",credentials.getPresidente().getSquadra().getId());
+				return "index.html";
 			}
 		}
 		return "index.html";
@@ -94,6 +104,9 @@ public class SquadraController {
 	public String getSquadra(Model model, @PathVariable Long id) {
 
 		boolean isAdmin = false;
+		boolean isPresidente = false;
+		Squadra squadra = squadraService.findSquadraById(id);
+
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if(!(authentication instanceof AnonymousAuthenticationToken)) {
@@ -102,17 +115,24 @@ public class SquadraController {
 			if(credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
 				isAdmin = true;
 			}
+			if(squadra.getPresidente().equals(credentials.getPresidente())) {
+				isPresidente = true;
+			}
 		}
+		
+		FormazioneForm formazione = new FormazioneForm();
+		formazione.setTitolari(getTitolari(squadra.getGiocatori()));
+		formazione.setRiserve(getRiserve(squadra.getGiocatori()));
 
-		Squadra squadra = squadraService.findSquadraById(id);
 
 		model.addAttribute("squadra", squadra);
-		model.addAttribute("titolari", getTitolari(squadra.getGiocatori()));
-		model.addAttribute("riserve", getRiserve(squadra.getGiocatori()));
 		model.addAttribute("numeroGiocatori", squadra.getGiocatori().size());
 		model.addAttribute("errori", false);
 		model.addAttribute("isAdmin", isAdmin);
-
+		model.addAttribute("isPresidente", isPresidente);
+		model.addAttribute("modificato", new Giocatore());
+		model.addAttribute("formazione", formazione);
+		model.addAttribute("formazioneNuova", new FormazioneForm());
 
 		return "squadra.html";
 	}
@@ -137,6 +157,10 @@ public class SquadraController {
 			model.addAttribute("numeroGiocatori", squad.getGiocatori().size());
 			model.addAttribute("errori", true);
 			model.addAttribute("isAdmin", true);
+			model.addAttribute("isPresidente", false);
+			model.addAttribute("modificato", new Giocatore());
+			model.addAttribute("nuovo", new Giocatore());
+
 
 			List<String> errori = new ArrayList<>();
 
@@ -152,6 +176,38 @@ public class SquadraController {
 		modificaSquadra(squadra, dataDiNascitaPres, logo, immaginePres, squad.getGiocatori(), squad.getPresidente(), squad);
 
 		return "redirect:/squadra/" + id;
+	}
+	
+	@PostMapping("/presidente/squadra/{id}/salva_formazione")
+	public String salvaFormazione(@PathVariable Long id, RedirectAttributes redirectAttributes,
+								  @ModelAttribute("nuovaFormazione")FormazioneForm formazione ){
+		
+		Squadra squadra = squadraService.findSquadraById(id);
+		impostaTitolarita(squadra.getGiocatori(), formazione);
+		squadraService.save(squadra);
+		redirectAttributes.addFlashAttribute("successo", "Formazione Salvata!");
+		
+		return "redirect:/squadra/" + id;
+	}
+	
+
+	private void impostaTitolarita(List<Giocatore> giocatori, FormazioneForm formazione) {
+		for(Giocatore t : formazione.getTitolari()) {
+			for(Giocatore g : giocatori) {
+				if(g.getId() == t.getId()) {
+					g.setTitolare(t.isTitolare());
+					giocatoreService.save(g);
+				}
+			}
+		}
+		for(Giocatore t : formazione.getRiserve()) {
+			for(Giocatore g : giocatori) {
+				if(g.getId() == t.getId()) {
+					g.setTitolare(t.isTitolare());
+					giocatoreService.save(g);
+				}
+			}
+		}
 	}
 
 	@PostMapping("/admin/nuova_squadra")
@@ -219,8 +275,9 @@ public class SquadraController {
 		presidente.setImmagine(buildImmagine(immaginePres));
 		squadra.setGiocatori(new ArrayList<>());
 		credentials.setPresidente(presidente);
-		credentialsService.saveCredentials(credentials);
+		credentials.setRole(Credentials.PRESIDENTE_ROLE);
 		squadraService.save(squadra);
+		credentialsService.saveCredentials(credentials);
 
 	}
 
@@ -228,34 +285,49 @@ public class SquadraController {
 			MultipartFile logo, MultipartFile immaginePres,
 			List<Giocatore> giocatori, Presidente presidente,
 			Squadra vecchia) {
-
 		squadra.setGiocatori(giocatori);
 		squadra.getPresidente().setId(presidente.getId());
 
-		if(nascita != null) {
+		if(nascita == null) {
 			squadra.getPresidente().setDataNascita(presidente.getDataNascita());
 		} else {
 			squadra.getPresidente().setDataNascita(nascita);
 		}
 
 
-		if(logo != null) {
-			squadra.setImmagine(buildImmagine(logo));
-		} else {
+		try {
+			if(logo.getBytes() != null && logo.getBytes().length > 0) {
+				squadra.setImmagine(buildImmagine(logo));
+			} else {
+				try{
+					squadra.setImmagine(vecchia.getImmagine());
+				} catch (NullPointerException e) {
+					squadra.setImmagine(null);
+				}
+			}
+		} catch (IOException e) {
 			try{
 				squadra.setImmagine(vecchia.getImmagine());
-			} catch (NullPointerException e) {
+			} catch (NullPointerException npe) {
 				squadra.setImmagine(null);
 			}
 		}
 		
-		if(immaginePres != null) {
-			squadra.getPresidente().setImmagine(buildImmagine(immaginePres));
-		} else {
+		try {
+			if(immaginePres.getBytes() != null && immaginePres.getBytes().length > 0) {
+				presidente.setImmagine(buildImmagine(logo));
+			} else {
+				try{
+					presidente.setImmagine(vecchia.getPresidente().getImmagine());
+				} catch (NullPointerException e) {
+					presidente.setImmagine(null);
+				}
+			}
+		} catch (IOException e) {
 			try{
-				squadra.getPresidente().setImmagine(vecchia.getImmagine());
-			} catch (NullPointerException e) {
-				squadra.getPresidente().setImmagine(null);
+				presidente.setImmagine(vecchia.getImmagine());
+			} catch (NullPointerException npe) {
+				presidente.setImmagine(null);
 			}
 		}
 
@@ -292,6 +364,5 @@ public class SquadraController {
 		image.setMIMEType(file.getContentType());
 		return image;
 	}
-
 
 }

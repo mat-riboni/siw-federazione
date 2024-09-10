@@ -63,7 +63,14 @@ public class SiwFederazioneApplication implements CommandLineRunner {
 			presidente.setLuogoNascita("Genova");
 			presidente.setSquadra(squadra);
 			squadra.setPresidente(presidente);
+			Credentials cred = new Credentials();
+			cred.setUsername("pres" + i);
+			cred.setPassword(Integer.toString(i));
+			cred.setPresidente(presidente);
+			cred.setRole(Credentials.PRESIDENTE_ROLE);
 			squadraService.save(squadra);
+			credentialsService.saveCredentials(cred);
+
 		}
 		Credentials admin = new Credentials();
 		admin.setUsername("adminProva");

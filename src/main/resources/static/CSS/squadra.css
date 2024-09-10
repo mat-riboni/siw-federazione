@@ -132,6 +132,9 @@ button:hover {
     font-weight: bold;
     margin-left: 15px;
     color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .giocatore{
@@ -182,3 +185,21 @@ button:hover {
 .uk-input{
 	margin: 5px 0;
 }
+
+.aggiungi{
+  align-items: center;
+  justify-content: space-around;
+}
+
+.aggiungi:hover{
+    cursor: pointer;
+}
+
+.uk-modal-dialog{
+	opacity: 1;
+	margin-top: 100px;
+}
+
+
+
+

@@ -119,8 +119,8 @@
             <div class="uk-modal-body">
 				<ul class="uk-list uk-list-striped">
 				    <li th:each="presidente:${presidenti}">
-						<b th:text="${presidente.nome}"></b>,
-						<span th:text="${presidente.squadra.name}"></span>
+						<b th:text="${presidente.nome}"></b> <b th:text="${presidente.cognome}"></b>,
+						<a th:href="@{/squadra/{id}(id=${presidente.squadra.id})}" th:text="${presidente.squadra.name}"></a>
 					</li>
 				</ul>            
 			</div>

@@ -3,6 +3,7 @@ package it.uniroma3.federazione.model;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,6 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Giocatore {
@@ -18,22 +21,27 @@ public class Giocatore {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@NotBlank(message = "Il ruolo è obbligatorio")
 	private String ruolo;
 	
+	@NotBlank(message = "Il nome è obbligatorio")
 	private String nome;
 	
+	@NotBlank(message = "Il cognome è obbligatorio")
 	private String cognome;
 	
+	@NotBlank(message = "Il luogo di nascita è obbligatorio")
 	private String luogoNascita;
 	
 	private LocalDate dataNascita;
 	
-	@Max(value = 99)
+	@Max(value = 99, message = "Il numero non può essere maggiore di 99")
+	@Min(value = 0, message = "Il numero non può essere minore di zero")
 	private int numeroMaglia;
 	
 	private boolean titolare;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "squadra_id")
 	private Squadra squadra;
 	

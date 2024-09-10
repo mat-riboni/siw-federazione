@@ -1,154 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lega Tre</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/css/uikit.min.css" />
 
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
-    <link rel="stylesheet" th:href="@{/CSS/squadra.css}">
-  </head>
-  <body>
-    <div class="header">
-        <span th:text="${squadra.name}">
-            Pallonari
-            <img class="scudetto" src="logo_squadra.jpg"/>
-        </span>
-        <div class="btns-group">
-            <button class="uk-button arancione" th:onclick="|window.location.href = '/'|">Home</button>
-			 <a th:if="${isAdmin}" href="#modal-nuova" uk-toggle class="uk-button arancione">Modifica dati</a>
-            <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip"><span uk-icon="info"></span>Info</button>
-        </div>
-    </div>
-	<div th:if="${errori}" class="uk-alert-danger" uk-alert>
-		  <a class="uk-alert-close" uk-close></a>
-		  <p>Ci sono errori nel modulo:</p>
-	      <ul>
-		       <li th:each="e : ${messaggiErrore}">
-		          <span th:text="${e}"></span>
-		      </li>
-		  </ul>
-	</div>
-    <div class="campo-container">
-        <div class="panchina">
-            <div class="panchina-titolo">
-                <h5>Panchina</h5>
-            </div>
-            <ul class="uk-grid-small uk-child-width-1-2 uk-child-width-1-1@s" uk-sortable="group: sortable-group" uk-grid>
-                <li th:each="giocatore : ${riserve}" >
-                    <div class="uk-card giocatore uk-card-default uk-card-body uk-card-small">
-                        <div class="left"><span th:text="${giocatore.nome}"> </span> <span th:text="${giocatore.cognome}"></span></br>
-							<span th:text="${giocatore.ruolo}"></span>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Lega Tre</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/css/uikit.min.css" />
+
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+	<link rel="stylesheet" th:href="@{/CSS/squadra.css}">
+</head>
+
+<body>
+	<form id="salvaFormazione" th:object="${formazioneNuova}" method="post" th:action="@{/presidente/squadra/{id}/salva_formazione(id=${squadra.id})}">
+		<div class="header">
+			<span th:text="${squadra.name}">
+				Pallonari
+				<img class="scudetto" src="logo_squadra.jpg" />
+			</span>
+			<div class="btns-group">
+				<button class="uk-button arancione" type="button" th:onclick="|window.location.href = '/'|">Home</button>
+				<button th:if="${isPresidente}" id="salva-formazione-btn" class="uk-button arancione" type="submit">Salva Formazione</button>
+				<a th:if="${isAdmin}" href="#modal-nuova" uk-toggle class="uk-button arancione">Modifica dati</a>
+				<button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip"><span
+						uk-icon="info"></span>Info</button>
+			</div>
+		</div>
+		<div th:if="${errori}" class="uk-alert-danger" uk-alert>
+			<a class="uk-alert-close" uk-close></a>
+			<p>Ci sono errori nel modulo:</p>
+			<ul>
+				<li th:each="e : ${messaggiErrore}">
+					<span th:text="${e}"></span>
+				</li>
+			</ul>
+		</div>
+		<div th:if="${dettaglioErrore}" class="uk-alert-danger" uk-alert>
+			<a href class="uk-alert-close" uk-close></a>
+			<p th:text="${dettaglioErrore}"></p>
+		</div>
+		<div th:if="${successo}" class="uk-alert-success" uk-alert>
+			<a href class="uk-alert-close" uk-close></a>
+			<p th:text="${successo}"></p>
+		</div>
+		<div class="campo-container">
+			<div class="panchina">
+				<div class="panchina-titolo">
+					<h5>Panchina</h5>
+				</div>
+				<ul class="uk-grid-small uk-child-width-1-2 uk-child-width-1-1@s" id="riserve-list" uk-sortable="group: sortable-group"
+					uk-grid>
+					<li th:each="giocatore, iter : ${formazione.riserve}">
+						<input type="hidden" th:field="${formazioneNuova.riserve[__${iter.index}__].id}" th:value="${giocatore.id}">
+						<input type="hidden" th:field="${formazioneNuova.riserve[__${iter.index}__].titolare}" class="titolarita">
+						<div class="uk-card giocatore uk-card-default uk-card-body uk-card-small">
+							<div class="left"><span th:text="${giocatore.nome}"> </span> <span
+									th:text="${giocatore.cognome}"></span></br>
+								<span th:text="${giocatore.ruolo}"></span>
+							</div>
+							<ul class="uk-list dati uk-list-divider" uk-drop="mode: hover; pos: top">
+								<li><b>Nome: </b><span th:text="${giocatore.nome}"></span></li>
+								<li><b>Cognome: </b> <span th:text="${giocatore.cognome}"></span></li>
+								<li><b>Ruolo: </b> <span th:text="${giocatore.ruolo}"></span></li>
+								<li><b>Numero maglia: </b> <span th:text="${giocatore.numeroMaglia}"></span></li>
+								<li><b>Anno di nascita: </b><span th:text="${giocatore.dataNascita}"></span></li>
+							</ul>
+							<div th:if="${isPresidente}" class="right number">
+								<div th:text="${giocatore.numeroMaglia}"></div><a
+									th:href="|#modifica-giocatore-${giocatore.id}|" uk-toggle
+									uk-icon="icon: pencil; ratio: 1.5"></a>
+							</div>
+							<div th:unless="${isPresidente}" th:text="${giocatore.numeroMaglia}" class="right number">12
+							</div>
+							<div th:id="'modifica-giocatore-' + ${giocatore.id}" uk-modal>
+								<form th:action="@{/modifica_giocatore/{squadraId}(squadraId = ${squadra.id})}"
+									th:object="${modificato}" method="post">
+									<div class="uk-modal-dialog uk-modal-body">
+										<h2 class="uk-modal-title">Modifica <span th:text="${giocatore.cognome}"></span>
+										</h2>
+										<input type="hidden" th:value="${giocatore.id}" name="id">
+										<input type="hidden" th:value="${giocatore.titolare}" name="titolare">
+										<input class="uk-input" type="text" placeholder="Nome"
+											th:value="${giocatore.nome}" name="nome">
+										<input class="uk-input" type="text" placeholder="Cognome"
+											th:value="${giocatore.cognome}" name="cognome">
+										<input class="uk-input" type="text" placeholder="Ruolo"
+											th:value="${giocatore.ruolo}" name="ruolo">
+										<input class="uk-input" type="number" placeholder="Numero maglia"
+											th:value="${giocatore.numeroMaglia}" name="numeroMaglia">
+										<input class="uk-input" type="text" placeholder="Luogo di nascita"
+											th:value="${giocatore.luogoNascita}" name="luogoNascita">
+										<input class="uk-input" type="date" placeholder="Anno di nascita"
+											th:value="${giocatore.dataNascita}" name="dataNascita">
+										<div class="uk-modal-footer uk-text-right">
+											<button class="uk-button uk-button-default uk-modal-close"
+												type="button">Annulla</button>
+											<button class="uk-button uk-button-primary" type="submit">Salva</button>
+										</div>
+									</div>
+								</form>
+							</div>
 						</div>
-						<ul class="uk-list dati uk-list-divider" uk-drop="mode: hover; pos: top">
-						    <li><b>Nome: </b><span th:text="${giocatore.nome}"></span></li>
-						    <li><b>Cognome: </b> <span th:text="${giocatore.cognome}"></span></li>
-						    <li><b>Ruolo: </b> <span th:text="${giocatore.ruolo}"></span></li>
-						    <li><b>Numero maglia: </b> <span th:text="${giocatore.numeroMaglia}"></span></li>
-						    <li><b>Anno di nascita: </b><span th:text="${giocatore.dataNascita}" ></span></li>
-						 </ul>
-                        <div class="right number" th:text="${giocatore.numeroMaglia}">3</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="campo">
-            <img class="background" th:src="@{/images/183860-campo-da-basket-vettoriale.png}"/>
-            <ul class="uk-grid-large uk-flex-center uk-child-width-1-2 uk-child-width-1-2@s" uk-sortable="group: sortable-group" uk-grid>
-                <li th:each="giocatore : ${titolari}">
-                    <div class="uk-card giocatore uk-card-default uk-card-body uk-card-small">
-                        <div class="left"><span th:text="${giocatore.nome}"></span> <span th:text="${giocatore.cognome}"></span></br>
-							<span th:text="${giocatore.ruolo}"></span>
+					</li>
+					<li th:if="${isPresidente}">
+						<div
+							class="uk-card aggiungi giocatore uk-card-default uk-card-body uk-card-small uk-sortable-nodrag">
+							<a href="#nuovo-giocatore" uk-toggle>Aggiungi giocatore</a><a
+								uk-icon="icon: plus; ratio: 2"></a>
 						</div>
-                            <ul class="uk-list dati uk-list-divider" uk-drop="mode: hover; pos: top">
-                                <li><b>Nome: </b><span th:text="${giocatore.nome}"></span></li>
-                                <li><b>Cognome: </b> <span th:text="${giocatore.cognome}"></span></li>
-                                <li><b>Ruolo: </b> <span th:text="${giocatore.ruolo}"></span></li>
-                                <li><b>Numero maglia: </b> <span th:text="${giocatore.numeroMaglia}"></span></li>
-                                <li><b>Anno di nascita: </b><span th:text="${giocatore.dataNascita}" ></span></li>
-                            </ul>
-                        <div th:text="${giocatore.numeroMaglia}" class="right number" >12</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true; mode: push">
-        <div class="uk-offcanvas-bar">
-    
-            <button class="uk-offcanvas-close" type="button" uk-close></button>
-    
-            <h3>Squadra</h3>
-    
-            <ul class="uk-list uk-list-divider">
-                <li><b>Nome:</b> <span th:text="${squadra.name}"></span></li>
-                <li><b>Anno Fondazione:</b> <span th:text="${squadra.anno}"></span></li>
-                <li><b>Sede:</b> <span th:text="${squadra.sede}"></span></li>
-                <li><b>Numero giocatori:</b> <span th:text="${numeroGiocatori}"></span></li>
-                <li><b>Presidente:</b></li>
-            </ul>    
-            <div class="uk-card presidente uk-card-secondary uk-width-1-2@m">
-                <div class="uk-card-header">
-                    <div class="uk-grid-small uk-flex-middle" uk-grid>
-                        <div class="uk-width-auto">
-                            <img class="uk-border-circle" width="40" height="40" th:src="@{/immaginePresidente/{id}(id=${squadra.presidente.id})}" alt="Avatar">
-                        </div>
-                        <div class="uk-width-expand">
-                            <h3 class="uk-card-title uk-margin-remove-bottom">
-								<span th:text="${squadra.presidente.nome}">Sergio</span>
-								<span th:text="${squadra.presidente.cognome}">Allevi</span>
-							 </h3>
-                            <p class="uk-text-meta uk-margin-remove-top"><span th:text="${#temporals.format(squadra.presidente.dataNascita, 'dd/MM/yyyy')}">April 01, 2016</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="uk-card-body">
-                    <ul class="uk-list uk-list-divider">
-                        <li><b>Luogo di nascita:</b> <span th:text="${squadra.presidente.luogoNascita}"></span></li>
-                        <li><b>Codice Fiscale:</b> <span th:text="${squadra.presidente.codiceFiscale}"></span></li>
-                        <li></li>
-                    </ul>    
-                </div>
-            </div>
-        </div>
-    </div>
-	<div id="modal-nuova" uk-modal>
-	        <div class="uk-modal-dialog">
-	                <button class="uk-modal-close-default" type="button" uk-close></button>
-	               <div class="uk-modal-header">
-	                <h2 class="uk-modal-title">Modifica squadra</h2>
-	               </div>
-	               <form th:action="@{/admin/modifica_squadra/{id}(id=${squadra.id})}" method="post" enctype="multipart/form-data">
-	                  <div class="uk-modal-body">
-				          <input class="uk-input" type="text" placeholder="Nome squadra" th:value="${squadra.name}" th:field="${squadra.name}" >
-				          <input class="uk-input" type="text" placeholder="Sede" th:value="${squadra.sede}" th:field="${squadra.sede}" >
-				          <label for="anno">Anno di fondazione:</label>
-				          <input class="uk-input" type="text" placeholder="Anno di fondazione" th:value="${squadra.anno}" th:field="${squadra.anno}" >
-						  <label for="immagine">Logo:</label>
-						  <input type="file" id="logo" name="logo" accept="image/*">
-				          <hr>
-				          <h6>Presidente:</h6>
-				          <input class="uk-input" type="text" placeholder="Nome presidente" th:value="${squadra.presidente.nome}" th:field="${squadra.presidente.nome}">
-						  <input class="uk-input" type="text" placeholder="Cognome presidente" th:value="${squadra.presidente.cognome}" th:field="${squadra.presidente.cognome}">
-				          <input class="uk-input" type="text" placeholder="Codice fiscale" 	th:value="${squadra.presidente.codiceFiscale}" th:field="${squadra.presidente.codiceFiscale}">
-				          <input class="uk-input" type="text" placeholder="Luogo di nascita" th:value="${squadra.presidente.luogoNascita}" th:field="${squadra.presidente.luogoNascita}">
-				          <label for="anno">Data di nascita:</label>
-				          <input class="uk-input" type="date" name="dataDiNascitaPres">
-						  <label for="immagine">Copertina:</label>
-						  <input type="file" id="immaginePres" name="immaginePres" accept="image/*">
-	                  </div>
-	                  <div class="uk-modal-footer uk-text-right">
-	              		<button class="uk-button uk-button-secondary uk-modal-close" type="button">Annulla</button>
-	                    <button class="uk-button uk-button-primary" type="submit">Salva</button>
-	                  </div>
-	        	</form>
-         </div>
-	 </div>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/js/uikit-icons.min.js"></script>
-  </body>
+					</li>
+				</ul>
+			</div>
+			<div class="campo">
+				<img class="background" th:src="@{/images/183860-campo-da-basket-vettoriale.png}" />
+				<ul id="titolari-list" class="uk-grid-large uk-flex-center uk-child-width-1-2 uk-child-width-1-2@s"
+					uk-sortable="group: sortable-group" uk-grid>
+					<li th:each="giocatore, iter : ${formazione.titolari}">
+						<input type="hidden" th:field="${formazioneNuova.titolari[__${iter.index}__].id}" th:value="${giocatore.id}">
+						<input type="hidden" th:field="${formazioneNuova.titolari[__${iter.index}__].titolare}" class="titolarita">
+						<div class="uk-card giocatore uk-card-default uk-card-body uk-card-small">
+							<div class="left"><span th:text="${giocatore.nome}"></span> <span
+									th:text="${giocatore.cognome}"></span></br>
+								<span th:text="${giocatore.ruolo}"></span>
+							</div>
+							<ul class="uk-list dati uk-list-divider" uk-drop="mode: hover; pos: top">
+								<li><b>Nome: </b><span th:text="${giocatore.nome}"></span></li>
+								<li><b>Cognome: </b> <span th:text="${giocatore.cognome}"></span></li>
+								<li><b>Ruolo: </b> <span th:text="${giocatore.ruolo}"></span></li>
+								<li><b>Numero maglia: </b> <span th:text="${giocatore.numeroMaglia}"></span></li>
+								<li><b>Anno di nascita: </b><span th:text="${giocatore.dataNascita}"></span></li>
+								<li th:if="${isPresidente}"><a class="uk-align-center"
+										th:href="'|#modifica-giocatore-' + ${giocatore.id}|" uk-icon="icon: pencil"
+										uk-toggle>Modifica</a></li>
+							</ul>
+							<div th:if="${isPresidente}" class="right number">
+								<div th:text="${giocatore.numeroMaglia}"></div><a
+									th:href="'|#modifica-giocatore-' + ${giocatore.id}|"
+									uk-icon="icon: pencil; ratio: 1.5" uk-toggle></a>
+							</div>
+							<div th:unless="${isPresidente}" th:text="${giocatore.numeroMaglia}" class="right number">12
+							</div>
+							<div th:id="'modifica-giocatore-' + ${giocatore.id}" uk-modal>
+								<form th:action="@{/modifica_giocatore/{squadraId}(squadraId = ${squadra.id})}"
+									th:object="${modificato}" method="post">
+									<div class="uk-modal-dialog uk-modal-body">
+										<h2 class="uk-modal-title">Modifica <span th:text="${giocatore.cognome}"></span>
+										</h2>
+										<input type="hidden" th:value="${giocatore.id}" name="id">
+										<input type="hidden" th:value="${giocatore.titolare}" name="titolare">
+										<input class="uk-input" type="text" placeholder="Nome"
+											th:value="${giocatore.nome}" name="nome">
+										<input class="uk-input" type="text" placeholder="Cognome"
+											th:value="${giocatore.cognome}" name="cognome">
+										<input class="uk-input" type="text" placeholder="Ruolo"
+											th:value="${giocatore.ruolo}" name="ruolo">
+										<input class="uk-input" type="number" placeholder="Numero maglia"
+											th:value="${giocatore.numeroMaglia}" name="numeroMaglia">
+										<input class="uk-input" type="text" placeholder="Luogo di nascita"
+											th:value="${giocatore.luogoNascita}" name="luogoNascita">
+										<input class="uk-input" type="date" placeholder="Anno di nascita"
+											th:value="${giocatore.dataNascita}" name="dataNascita">
+										<div class="uk-modal-footer uk-text-right">
+											<button class="uk-button uk-button-default uk-modal-close"
+												type="button">Annulla</button>
+											<button class="uk-button uk-button-primary" type="submit">Salva</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true; mode: push">
+			<div class="uk-offcanvas-bar">
+
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+				<h3>Squadra</h3>
+
+				<ul class="uk-list uk-list-divider">
+					<li><b>Nome:</b> <span th:text="${squadra.name}"></span></li>
+					<li><b>Anno Fondazione:</b> <span th:text="${squadra.anno}"></span></li>
+					<li><b>Sede:</b> <span th:text="${squadra.sede}"></span></li>
+					<li><b>Numero giocatori:</b> <span th:text="${numeroGiocatori}"></span></li>
+					<li><b>Presidente:</b></li>
+				</ul>
+				<div class="uk-card presidente uk-card-secondary uk-width-1-2@m">
+					<div class="uk-card-header">
+						<div class="uk-grid-small uk-flex-middle" uk-grid>
+							<div class="uk-width-auto">
+								<img class="uk-border-circle" width="40" height="40"
+									th:src="@{/immaginePresidente/{id}(id=${squadra.presidente.id})}" alt="Avatar">
+							</div>
+							<div class="uk-width-expand">
+								<h3 class="uk-card-title uk-margin-remove-bottom">
+									<span th:text="${squadra.presidente.nome}">Sergio</span>
+									<span th:text="${squadra.presidente.cognome}">Allevi</span>
+								</h3>
+								<p class="uk-text-meta uk-margin-remove-top"><span
+										th:text="${#temporals.format(squadra.presidente.dataNascita, 'dd/MM/yyyy')}">April
+										01, 2016</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="uk-card-body">
+						<ul class="uk-list uk-list-divider">
+							<li><b>Luogo di nascita:</b> <span th:text="${squadra.presidente.luogoNascita}"></span></li>
+							<li><b>Codice Fiscale:</b> <span th:text="${squadra.presidente.codiceFiscale}"></span></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="nuovo-giocatore" uk-modal>
+			<form th:action="@{/nuovo_giocatore/{squadraId}(squadraId = ${squadra.id})}" th:object="${nuovo}"
+				method="post">
+				<div class="uk-modal-dialog uk-modal-body">
+					<h2 class="uk-modal-title">Nuovo Giocatore</h2>
+					<input class="uk-input" type="text" placeholder="Nome" name="nome">
+					<input class="uk-input" type="text" placeholder="Cognome" name="cognome">
+					<input class="uk-input" type="text" placeholder="Ruolo" name="ruolo">
+					<input class="uk-input" type="number" placeholder="Numero maglia" name="numeroMaglia" value="0">
+					<input class="uk-input" type="text" placeholder="Luogo di nascita" name="luogoNascita">
+					<input class="uk-input" type="date" placeholder="Anno di nascita" name="dataNascita">
+					<div class="uk-modal-footer uk-text-right">
+						<button class="uk-button uk-button-default uk-modal-close" type="button">Annulla</button>
+						<button class="uk-button uk-button-primary" type="submit">Salva</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="modal-nuova" uk-modal>
+			<div class="uk-modal-dialog">
+				<button class="uk-modal-close-default" type="button" uk-close></button>
+				<div class="uk-modal-header">
+					<h2 class="uk-modal-title">Modifica squadra</h2>
+				</div>
+				<form th:action="@{/admin/modifica_squadra/{id}(id=${squadra.id})}" method="post"
+					enctype="multipart/form-data">
+					<div class="uk-modal-body">
+						<input class="uk-input" type="text" placeholder="Nome squadra" th:value="${squadra.name}"
+							th:field="${squadra.name}">
+						<input class="uk-input" type="text" placeholder="Sede" th:value="${squadra.sede}"
+							th:field="${squadra.sede}">
+						<label for="anno">Anno di fondazione:</label>
+						<input class="uk-input" type="text" placeholder="Anno di fondazione" th:value="${squadra.anno}"
+							th:field="${squadra.anno}">
+						<label for="immagine">Logo:</label>
+						<input type="file" id="logo" name="logo" accept="image/*">
+						<hr>
+						<h6>Presidente:</h6>
+						<input class="uk-input" type="text" placeholder="Nome presidente"
+							th:value="${squadra.presidente.nome}" th:field="${squadra.presidente.nome}">
+						<input class="uk-input" type="text" placeholder="Cognome presidente"
+							th:value="${squadra.presidente.cognome}" th:field="${squadra.presidente.cognome}">
+						<input class="uk-input" type="text" placeholder="Codice fiscale"
+							th:value="${squadra.presidente.codiceFiscale}"
+							th:field="${squadra.presidente.codiceFiscale}">
+						<input class="uk-input" type="text" placeholder="Luogo di nascita"
+							th:value="${squadra.presidente.luogoNascita}" th:field="${squadra.presidente.luogoNascita}">
+						<label for="anno">Data di nascita:</label>
+						<input class="uk-input" type="date" name="dataDiNascitaPres">
+						<label for="immagine">Copertina:</label>
+						<input type="file" id="immaginePres" name="immaginePres" accept="image/*">
+					</div>
+					<div class="uk-modal-footer uk-text-right">
+						<button class="uk-button uk-button-secondary uk-modal-close" type="button">Annulla</button>
+						<button class="uk-button uk-button-primary" type="submit">Salva</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</form>
+
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/js/uikit-icons.min.js"></script>
+	<script th:src="@{/script/squadra.js}"></script>
+</body>
+
 </html>

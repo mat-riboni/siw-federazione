@@ -3,7 +3,6 @@ package it.uniroma3.federazione.model;
 import java.util.Objects;
 
 import it.uniroma3.federazione.model.Credentials;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,7 +29,7 @@ public class Credentials {
 	
 	private String role;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "presidente_id")
 	private Presidente presidente;
 
