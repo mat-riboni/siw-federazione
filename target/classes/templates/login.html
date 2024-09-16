@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" th:href="@{/CSS/login.css}">
+	<!--Font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+
+
+</head>
+
+<body>
+
+	<div class='form-container'>
+		<div class="head">
+			<h4>Accedi</h4>
+			<div class="error" th:if="${param.error}">
+				<span class="errore">Email o password errati</span>
+			</div>
+			<div th:unless="${param.error}">
+				<p>Bentornato!</p>
+			</div>
+		</div>
+
+		<form class="form" action="/login" method="post">
+			<input type="text" placeholder="Username" name="username" />
+			<input type="password" placeholder="Password" name="password" />
+			<button type="submit">Login</button>
+		</form>
+		<div class="bottom">
+			<span>Non hai un account? <a href="/register">Registrati</a></span>
+			<span>Torna alla <a href="/">Home</a></span>
+		</div>
+	</div>
+</body>
+
+</html>

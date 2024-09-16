@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: it.uniroma3.federazione.SiwFederazioneApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.950 s -- in it.uniroma3.federazione.SiwFederazioneApplicationTests

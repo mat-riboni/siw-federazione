@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(255, 166, 123);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+h5{
+    font-size: larger;
+}
+
+button{
+    margin-top: 30px;
+}
