@@ -19,5 +19,10 @@ public class PresidenteService {
 	public Presidente findPresidenteById(Long id) {
 		return presidenteRepository.findById(id).get();
 	}
+
+	public void save(Presidente presidente) {
+		presidenteRepository.save(presidente);
+		
+	}
 	
 }

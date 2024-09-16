@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lega Tre</title>
-    <link rel="stylesheet" th:href="@{/CSS/index.css}">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
-  </head>
-  <body>
-  <div class="container">
-    <div class="navbar">
-      <div class="left-logo"><span class="material-symbols-outlined">
-        sports_basketball
-        </span>
-        <div class="name">
-          Lega Tre
-        </div>
-      </div>
-      <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-input">
-        <button class="search-button">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="search-icon">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.35-6.65a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-        </button>
-    </div>
-      <div class="logs">
-        <a th:unless="${isPresidente}" href="/login">Login</a>
-		<a th:if="${isPresidente}" href="/logout">Logout</a>
-        <button th:unless="${isPresidente}" th:onclick="|window.location.href = '/register'|">Registrati</button>
-		<button th:if="${isPresidente}" th:onclick="|window.location.href = '/squadra/' + ${squadraProprietarioId}|">Squadra</button>
-      </div>
-    </div>
-    <div class="copertina">
-      <div class="descrizione">
-        <h2>Gestisci la tua squadra di basket!</h2>
-        <div><p>Oppure richiedi di entrare nella lega</p>
-		<button th:if="${isPresidente}" th:onclick="|window.location.href = '/squadra/' + ${squadraProprietarioId}|">Squadra</button>
-        </div>
-      </div>
-      <div class="player">
-        <img th:src="@{/images/Basket3.png}">
-      </div>
-  </div>
-  <ul class="lista-squadre">
-    <li	th:each="squadra : ${squadre}" class="list-item">
-      <a th:href="@{/squadra/{id}(id=${squadra.id})}" th:text="${squadra.name}">Nome Squadra</a>
-      <p th:text="${squadra.sede}">Via della seta 45, Roma</p>
-      <img class="scudetto" th:src="@{/squadra/{id}/immagine(id=${squadra.id})}">
-    </li>
-  </ul>
-  </body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Lega Tre</title>
+	<link rel="stylesheet" th:href="@{/CSS/index.css}">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="navbar">
+			<div class="left-logo"><span class="material-symbols-outlined">
+					sports_basketball
+				</span>
+				<div class="name">
+					Lega Tre
+				</div>
+			</div>
+			<div class="search-container">
+				<input type="text" placeholder="Search..." class="search-input">
+				<button class="search-button">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+						class="search-icon">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M21 21l-4.35-4.35m1.35-6.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+					</svg>
+				</button>
+			</div>
+			<div class="logs">
+				<a th:unless="${isPresidente}" href="/login">Login</a>
+				<a th:if="${isPresidente}" href="/logout">Logout</a>
+				<button th:unless="${isPresidente}"
+					th:onclick="|window.location.href = '/register'|" disabled>Registrati</button>
+				<button th:if="${isPresidente}"
+					th:onclick="|window.location.href = '/squadra/' + ${squadraProprietarioId}|">Squadra</button>
+			</div>
+		</div>
+		<div class="copertina">
+			<div class="descrizione">
+				<h2>Gestisci la tua squadra di basket!</h2>
+				<div>
+					<p>Oppure richiedi di entrare nella lega</p>
+					<button th:if="${isPresidente}"
+						th:onclick="|window.location.href = '/squadra/' + ${squadraProprietarioId}|">Squadra</button>
+					<button th:unless="${isPresidente}" disabled>Registrati</button>
+				</div>
+			</div>
+			<div class="player">
+				<img th:src="@{/images/Basket3.png}">
+			</div>
+		</div>
+		<ul class="lista-squadre">
+			<li th:each="squadra : ${squadre}" class="list-item">
+				<a th:href="@{/squadra/{id}(id=${squadra.id})}" th:text="${squadra.name}">Nome Squadra</a>
+				<p th:text="${squadra.sede}">Via della seta 45, Roma</p>
+				<img class="scudetto" th:src="@{/squadra/{id}/immagine(id=${squadra.id})}">
+			</li>
+		</ul>
+</body>
+
 </html>

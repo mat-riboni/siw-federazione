@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<form id="salvaFormazione" th:object="${formazioneNuova}" method="post" th:action="@{/presidente/squadra/{id}/salva_formazione(id=${squadra.id})}">
+		<input type="hidden" id="squadra-id" th:value="${squadra.id}">
 		<div class="header">
 			<span th:text="${squadra.name}">
 				Pallonari
@@ -24,7 +24,7 @@
 			</span>
 			<div class="btns-group">
 				<button class="uk-button arancione" type="button" th:onclick="|window.location.href = '/'|">Home</button>
-				<button th:if="${isPresidente}" id="salva-formazione-btn" class="uk-button arancione" type="submit">Salva Formazione</button>
+				<button th:if="${isPresidente}" id="salva-formazione-btn" class="uk-button arancione" type="button">Salva Formazione</button>
 				<a th:if="${isAdmin}" href="#modal-nuova" uk-toggle class="uk-button arancione">Modifica dati</a>
 				<button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip"><span
 						uk-icon="info"></span>Info</button>
@@ -54,9 +54,8 @@
 				</div>
 				<ul class="uk-grid-small uk-child-width-1-2 uk-child-width-1-1@s" id="riserve-list" uk-sortable="group: sortable-group"
 					uk-grid>
-					<li th:each="giocatore, iter : ${formazione.riserve}">
-						<input type="hidden" th:field="${formazioneNuova.riserve[__${iter.index}__].id}" th:value="${giocatore.id}">
-						<input type="hidden" th:field="${formazioneNuova.riserve[__${iter.index}__].titolare}" class="titolarita">
+					<li th:each="giocatore : ${riserve}">
+						<input type="hidden" th:value="${giocatore.id}">
 						<div class="uk-card giocatore uk-card-default uk-card-body uk-card-small">
 							<div class="left"><span th:text="${giocatore.nome}"> </span> <span
 									th:text="${giocatore.cognome}"></span></br>
@@ -108,7 +107,7 @@
 					</li>
 					<li th:if="${isPresidente}">
 						<div
-							class="uk-card aggiungi giocatore uk-card-default uk-card-body uk-card-small uk-sortable-nodrag">
+							class="uk-card aggiungi-giocatore uk-card-default uk-card-body uk-card-small uk-sortable-nodrag">
 							<a href="#nuovo-giocatore" uk-toggle>Aggiungi giocatore</a><a
 								uk-icon="icon: plus; ratio: 2"></a>
 						</div>
@@ -119,9 +118,8 @@
 				<img class="background" th:src="@{/images/183860-campo-da-basket-vettoriale.png}" />
 				<ul id="titolari-list" class="uk-grid-large uk-flex-center uk-child-width-1-2 uk-child-width-1-2@s"
 					uk-sortable="group: sortable-group" uk-grid>
-					<li th:each="giocatore, iter : ${formazione.titolari}">
-						<input type="hidden" th:field="${formazioneNuova.titolari[__${iter.index}__].id}" th:value="${giocatore.id}">
-						<input type="hidden" th:field="${formazioneNuova.titolari[__${iter.index}__].titolare}" class="titolarita">
+					<li th:each="giocatore: ${titolari}">
+						<input type="hidden" th:value="${giocatore.id}">
 						<div class="uk-card giocatore uk-card-default uk-card-body uk-card-small">
 							<div class="left"><span th:text="${giocatore.nome}"></span> <span
 									th:text="${giocatore.cognome}"></span></br>
@@ -278,7 +276,6 @@
 				</form>
 			</div>
 		</div>
-	</form>
 
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/js/uikit.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/js/uikit-icons.min.js"></script>

@@ -25,11 +25,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import it.uniroma3.federazione.model.Costanti;
 import it.uniroma3.federazione.model.Credentials;
-import it.uniroma3.federazione.model.FormazioneForm;
 import it.uniroma3.federazione.model.Giocatore;
 import it.uniroma3.federazione.model.Image;
 import it.uniroma3.federazione.model.Presidente;
@@ -119,20 +117,15 @@ public class SquadraController {
 				isPresidente = true;
 			}
 		}
-		
-		FormazioneForm formazione = new FormazioneForm();
-		formazione.setTitolari(getTitolari(squadra.getGiocatori()));
-		formazione.setRiserve(getRiserve(squadra.getGiocatori()));
 
-
+		model.addAttribute("titolari", getTitolari(squadra.getGiocatori()));
+		model.addAttribute("riserve", getRiserve(squadra.getGiocatori()));
 		model.addAttribute("squadra", squadra);
 		model.addAttribute("numeroGiocatori", squadra.getGiocatori().size());
 		model.addAttribute("errori", false);
 		model.addAttribute("isAdmin", isAdmin);
 		model.addAttribute("isPresidente", isPresidente);
 		model.addAttribute("modificato", new Giocatore());
-		model.addAttribute("formazione", formazione);
-		model.addAttribute("formazioneNuova", new FormazioneForm());
 
 		return "squadra.html";
 	}
@@ -178,38 +171,6 @@ public class SquadraController {
 		return "redirect:/squadra/" + id;
 	}
 	
-	@PostMapping("/presidente/squadra/{id}/salva_formazione")
-	public String salvaFormazione(@PathVariable Long id, RedirectAttributes redirectAttributes,
-								  @ModelAttribute("nuovaFormazione")FormazioneForm formazione ){
-		
-		Squadra squadra = squadraService.findSquadraById(id);
-		impostaTitolarita(squadra.getGiocatori(), formazione);
-		squadraService.save(squadra);
-		redirectAttributes.addFlashAttribute("successo", "Formazione Salvata!");
-		
-		return "redirect:/squadra/" + id;
-	}
-	
-
-	private void impostaTitolarita(List<Giocatore> giocatori, FormazioneForm formazione) {
-		for(Giocatore t : formazione.getTitolari()) {
-			for(Giocatore g : giocatori) {
-				if(g.getId() == t.getId()) {
-					g.setTitolare(t.isTitolare());
-					giocatoreService.save(g);
-				}
-			}
-		}
-		for(Giocatore t : formazione.getRiserve()) {
-			for(Giocatore g : giocatori) {
-				if(g.getId() == t.getId()) {
-					g.setTitolare(t.isTitolare());
-					giocatoreService.save(g);
-				}
-			}
-		}
-	}
-
 	@PostMapping("/admin/nuova_squadra")
 	public String inserisciNuovaSquadra(@Valid @ModelAttribute Credentials credentials,
 			BindingResult bindCredentials,
@@ -301,7 +262,7 @@ public class SquadraController {
 			} else {
 				try{
 					squadra.setImmagine(vecchia.getImmagine());
-				} catch (NullPointerException e) {
+				} catch (NullPointerException npe) {
 					squadra.setImmagine(null);
 				}
 			}
@@ -315,19 +276,19 @@ public class SquadraController {
 		
 		try {
 			if(immaginePres.getBytes() != null && immaginePres.getBytes().length > 0) {
-				presidente.setImmagine(buildImmagine(logo));
+				squadra.getPresidente().setImmagine(buildImmagine(immaginePres));
 			} else {
 				try{
-					presidente.setImmagine(vecchia.getPresidente().getImmagine());
-				} catch (NullPointerException e) {
-					presidente.setImmagine(null);
+					squadra.getPresidente().setImmagine(vecchia.getPresidente().getImmagine());
+				} catch (NullPointerException npe) {
+					squadra.getPresidente().setImmagine(null);
 				}
 			}
 		} catch (IOException e) {
 			try{
-				presidente.setImmagine(vecchia.getImmagine());
+				squadra.getPresidente().setImmagine(vecchia.getImmagine());
 			} catch (NullPointerException npe) {
-				presidente.setImmagine(null);
+				squadra.getPresidente().setImmagine(null);
 			}
 		}
 

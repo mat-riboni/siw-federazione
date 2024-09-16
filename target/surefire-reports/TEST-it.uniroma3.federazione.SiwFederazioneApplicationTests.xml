@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="it.uniroma3.federazione.SiwFederazioneApplicationTests" time="7.291" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\39334\eclipse-workspace\siw-federazione\target\test-classes;C:\Users\39334\eclipse-workspace\siw-federazione\target\classes;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.3.3\spring-boot-starter-data-jpa-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.3.3\spring-boot-starter-aop-3.3.3.jar;C:\Users\39334\.m2\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.3.3\spring-boot-starter-jdbc-3.3.3.jar;C:\Users\39334\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\39334\.m2\repository\org\springframework\spring-jdbc\6.1.12\spring-jdbc-6.1.12.jar;C:\Users\39334\.m2\repository\org\hibernate\orm\hibernate-core\6.5.2.Final\hibernate-core-6.5.2.Final.jar;C:\Users\39334\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\39334\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\39334\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\39334\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\39334\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\39334\.m2\repository\net\bytebuddy\byte-buddy\1.14.19\byte-buddy-1.14.19.jar;C:\Users\39334\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\39334\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\39334\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\39334\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\39334\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\39334\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\39334\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\39334\.m2\repository\org\springframework\data\spring-data-jpa\3.3.3\spring-data-jpa-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\data\spring-data-commons\3.3.3\spring-data-commons-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\spring-orm\6.1.12\spring-orm-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-context\6.1.12\spring-context-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-tx\6.1.12\spring-tx-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-beans\6.1.12\spring-beans-6.1.12.jar;C:\Users\39334\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\39334\.m2\repository\org\springframework\spring-aspects\6.1.12\spring-aspects-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.3.3\spring-boot-starter-thymeleaf-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter\3.3.3\spring-boot-starter-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot\3.3.3\spring-boot-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.3.3\spring-boot-autoconfigure-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.3.3\spring-boot-starter-logging-3.3.3.jar;C:\Users\39334\.m2\repository\ch\qos\logback\logback-classic\1.5.7\logback-classic-1.5.7.jar;C:\Users\39334\.m2\repository\ch\qos\logback\logback-core\1.5.7\logback-core-1.5.7.jar;C:\Users\39334\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.23.1\log4j-to-slf4j-2.23.1.jar;C:\Users\39334\.m2\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar;C:\Users\39334\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar;C:\Users\39334\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\39334\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.2.RELEASE\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\Users\39334\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\39334\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\39334\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.3.3\spring-boot-starter-web-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.3.3\spring-boot-starter-json-3.3.3.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.17.2\jackson-datatype-jdk8-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.2\jackson-datatype-jsr310-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.17.2\jackson-module-parameter-names-2.17.2.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.3.3\spring-boot-starter-tomcat-3.3.3.jar;C:\Users\39334\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.28\tomcat-embed-core-10.1.28.jar;C:\Users\39334\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.28\tomcat-embed-websocket-10.1.28.jar;C:\Users\39334\.m2\repository\org\springframework\spring-web\6.1.12\spring-web-6.1.12.jar;C:\Users\39334\.m2\repository\io\micrometer\micrometer-observation\1.13.3\micrometer-observation-1.13.3.jar;C:\Users\39334\.m2\repository\io\micrometer\micrometer-commons\1.13.3\micrometer-commons-1.13.3.jar;C:\Users\39334\.m2\repository\org\springframework\spring-webmvc\6.1.12\spring-webmvc-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-expression\6.1.12\spring-expression-6.1.12.jar;C:\Users\39334\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\39334\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.3.3\spring-boot-starter-test-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-test\3.3.3\spring-boot-test-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.3.3\spring-boot-test-autoconfigure-3.3.3.jar;C:\Users\39334\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\39334\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\39334\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\39334\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\39334\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\39334\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\39334\.m2\repository\org\assertj\assertj-core\3.25.3\assertj-core-3.25.3.jar;C:\Users\39334\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\39334\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.3\junit-jupiter-5.10.3.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\39334\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\39334\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\39334\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\39334\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;C:\Users\39334\.m2\repository\org\mockito\mockito-core\5.11.0\mockito-core-5.11.0.jar;C:\Users\39334\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.19\byte-buddy-agent-1.14.19.jar;C:\Users\39334\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\39334\.m2\repository\org\mockito\mockito-junit-jupiter\5.11.0\mockito-junit-jupiter-5.11.0.jar;C:\Users\39334\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\39334\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\39334\.m2\repository\org\springframework\spring-core\6.1.12\spring-core-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-jcl\6.1.12\spring-jcl-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-test\6.1.12\spring-test-6.1.12.jar;C:\Users\39334\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.3.3\spring-boot-starter-validation-3.3.3.jar;C:\Users\39334\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.28\tomcat-embed-el-10.1.28.jar;C:\Users\39334\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\39334\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\39334\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity5\3.1.1.RELEASE\thymeleaf-extras-springsecurity5-3.1.1.RELEASE.jar;C:\Users\39334\.m2\repository\org\thymeleaf\thymeleaf-spring5\3.1.1.RELEASE\thymeleaf-spring5-3.1.1.RELEASE.jar;C:\Users\39334\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.3.3\spring-boot-starter-security-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\spring-aop\6.1.12\spring-aop-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-config\6.3.3\spring-security-config-6.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-core\6.3.3\spring-security-core-6.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-crypto\6.3.3\spring-security-crypto-6.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-web\6.3.3\spring-security-web-6.3.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IT"/>
+    <property name="sun.boot.library.path" value="C:\Users\39334\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\39334\AppData\Local\Temp\surefire11872144006350591064\surefirebooter-20240916120012439_3.jar C:\Users\39334\AppData\Local\Temp\surefire11872144006350591064 2024-09-16T12-00-11_546-jvmRun1 surefire-20240916120012439_1tmp surefire_0-20240916120012439_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\39334\eclipse-workspace\siw-federazione\target\test-classes;C:\Users\39334\eclipse-workspace\siw-federazione\target\classes;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.3.3\spring-boot-starter-data-jpa-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.3.3\spring-boot-starter-aop-3.3.3.jar;C:\Users\39334\.m2\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.3.3\spring-boot-starter-jdbc-3.3.3.jar;C:\Users\39334\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\39334\.m2\repository\org\springframework\spring-jdbc\6.1.12\spring-jdbc-6.1.12.jar;C:\Users\39334\.m2\repository\org\hibernate\orm\hibernate-core\6.5.2.Final\hibernate-core-6.5.2.Final.jar;C:\Users\39334\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\39334\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\39334\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\39334\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\39334\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\39334\.m2\repository\net\bytebuddy\byte-buddy\1.14.19\byte-buddy-1.14.19.jar;C:\Users\39334\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\39334\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\39334\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\39334\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\39334\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\39334\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\39334\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\39334\.m2\repository\org\springframework\data\spring-data-jpa\3.3.3\spring-data-jpa-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\data\spring-data-commons\3.3.3\spring-data-commons-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\spring-orm\6.1.12\spring-orm-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-context\6.1.12\spring-context-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-tx\6.1.12\spring-tx-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-beans\6.1.12\spring-beans-6.1.12.jar;C:\Users\39334\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\39334\.m2\repository\org\springframework\spring-aspects\6.1.12\spring-aspects-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.3.3\spring-boot-starter-thymeleaf-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter\3.3.3\spring-boot-starter-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot\3.3.3\spring-boot-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.3.3\spring-boot-autoconfigure-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.3.3\spring-boot-starter-logging-3.3.3.jar;C:\Users\39334\.m2\repository\ch\qos\logback\logback-classic\1.5.7\logback-classic-1.5.7.jar;C:\Users\39334\.m2\repository\ch\qos\logback\logback-core\1.5.7\logback-core-1.5.7.jar;C:\Users\39334\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.23.1\log4j-to-slf4j-2.23.1.jar;C:\Users\39334\.m2\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar;C:\Users\39334\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar;C:\Users\39334\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\39334\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.2.RELEASE\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\Users\39334\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\39334\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\39334\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.3.3\spring-boot-starter-web-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.3.3\spring-boot-starter-json-3.3.3.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.17.2\jackson-datatype-jdk8-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.2\jackson-datatype-jsr310-2.17.2.jar;C:\Users\39334\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.17.2\jackson-module-parameter-names-2.17.2.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.3.3\spring-boot-starter-tomcat-3.3.3.jar;C:\Users\39334\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.28\tomcat-embed-core-10.1.28.jar;C:\Users\39334\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.28\tomcat-embed-websocket-10.1.28.jar;C:\Users\39334\.m2\repository\org\springframework\spring-web\6.1.12\spring-web-6.1.12.jar;C:\Users\39334\.m2\repository\io\micrometer\micrometer-observation\1.13.3\micrometer-observation-1.13.3.jar;C:\Users\39334\.m2\repository\io\micrometer\micrometer-commons\1.13.3\micrometer-commons-1.13.3.jar;C:\Users\39334\.m2\repository\org\springframework\spring-webmvc\6.1.12\spring-webmvc-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-expression\6.1.12\spring-expression-6.1.12.jar;C:\Users\39334\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\39334\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.3.3\spring-boot-starter-test-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-test\3.3.3\spring-boot-test-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.3.3\spring-boot-test-autoconfigure-3.3.3.jar;C:\Users\39334\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\39334\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\39334\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\39334\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\39334\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\39334\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\39334\.m2\repository\org\assertj\assertj-core\3.25.3\assertj-core-3.25.3.jar;C:\Users\39334\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\39334\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.3\junit-jupiter-5.10.3.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\39334\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\39334\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\39334\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\39334\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\39334\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;C:\Users\39334\.m2\repository\org\mockito\mockito-core\5.11.0\mockito-core-5.11.0.jar;C:\Users\39334\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.19\byte-buddy-agent-1.14.19.jar;C:\Users\39334\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\39334\.m2\repository\org\mockito\mockito-junit-jupiter\5.11.0\mockito-junit-jupiter-5.11.0.jar;C:\Users\39334\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\39334\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\39334\.m2\repository\org\springframework\spring-core\6.1.12\spring-core-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-jcl\6.1.12\spring-jcl-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\spring-test\6.1.12\spring-test-6.1.12.jar;C:\Users\39334\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.3.3\spring-boot-starter-validation-3.3.3.jar;C:\Users\39334\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.28\tomcat-embed-el-10.1.28.jar;C:\Users\39334\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\39334\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\39334\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity5\3.1.1.RELEASE\thymeleaf-extras-springsecurity5-3.1.1.RELEASE.jar;C:\Users\39334\.m2\repository\org\thymeleaf\thymeleaf-spring5\3.1.1.RELEASE\thymeleaf-spring5-3.1.1.RELEASE.jar;C:\Users\39334\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\39334\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.3.3\spring-boot-starter-security-3.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\spring-aop\6.1.12\spring-aop-6.1.12.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-config\6.3.3\spring-security-config-6.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-core\6.3.3\spring-security-core-6.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-crypto\6.3.3\spring-security-crypto-6.3.3.jar;C:\Users\39334\.m2\repository\org\springframework\security\spring-security-web\6.3.3\spring-security-web-6.3.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\39334"/>
+    <property name="user.language" value="it"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-10-17"/>
+    <property name="java.home" value="C:\Users\39334\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\39334\eclipse-workspace\siw-federazione"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="windows-1252"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\39334\AppData\Local\Temp\surefire11872144006350591064\surefirebooter-20240916120012439_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.9+9"/>
+    <property name="user.name" value="39334"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.9+9"/>
+    <property name="localRepository" value="C:\Users\39334\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\39334\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="17.0.9"/>
+    <property name="user.dir" value="C:\Users\39334\eclipse-workspace\siw-federazione"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="1704"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\39334\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Users/39334/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin/server;C:/Users/39334/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\MATLAB\R2022a\bin;C:\Users\39334\AppData\Local\pnpm;C:\Users\39334\AppData\Local\Microsoft\WindowsApps;C:\Users\39334\AppData\Local\Programs\Microsoft VS Code\bin;C:\Risorse\flutter\bin;C:\MinGW\bin;C:\Users\39334\AppData\Local\GitHubDesktop\bin;C:\Program Files\Java\jdk-17\bin;C:\Users\39334\AppData\Local\pnpm;;C:\Windows\System32;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.9+9"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[siw-federazione] "/>
+  </properties>
+  <testcase name="contextLoads" classname="it.uniroma3.federazione.SiwFederazioneApplicationTests" time="0.48">
+    <system-out><![CDATA[12:00:13.367 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [it.uniroma3.federazione.SiwFederazioneApplicationTests]: SiwFederazioneApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:00:13.477 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration it.uniroma3.federazione.SiwFederazioneApplication for test class it.uniroma3.federazione.SiwFederazioneApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.3)
+
+2024-09-16T12:00:13.858+02:00  INFO 1704 --- [siw-federazione] [           main] i.u.f.SiwFederazioneApplicationTests     : Starting SiwFederazioneApplicationTests using Java 17.0.9 with PID 1704 (started by 39334 in C:\Users\39334\eclipse-workspace\siw-federazione)
+2024-09-16T12:00:13.858+02:00  INFO 1704 --- [siw-federazione] [           main] i.u.f.SiwFederazioneApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-09-16T12:00:14.694+02:00  INFO 1704 --- [siw-federazione] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-16T12:00:14.773+02:00  INFO 1704 --- [siw-federazione] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2024-09-16T12:00:15.369+02:00  INFO 1704 --- [siw-federazione] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-16T12:00:15.447+02:00  INFO 1704 --- [siw-federazione] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-16T12:00:15.494+02:00  INFO 1704 --- [siw-federazione] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-16T12:00:15.840+02:00  INFO 1704 --- [siw-federazione] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-16T12:00:15.871+02:00  INFO 1704 --- [siw-federazione] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-16T12:00:16.046+02:00  INFO 1704 --- [siw-federazione] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@258a8584
+2024-09-16T12:00:16.046+02:00  INFO 1704 --- [siw-federazione] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-16T12:00:16.093+02:00  WARN 1704 --- [siw-federazione] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-16T12:00:16.124+02:00 DEBUG 1704 --- [siw-federazione] [           main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@5d96d434) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@7283877)
+2024-09-16T12:00:16.124+02:00 DEBUG 1704 --- [siw-federazione] [           main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@286a4c52) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@13dd7887)
+2024-09-16T12:00:17.174+02:00  INFO 1704 --- [siw-federazione] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-16T12:00:17.189+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists credentials drop constraint if exists FKa8tgrep6xjx5d4nkqnttdfhmi
+Hibernate: alter table if exists credentials drop constraint if exists FKa8tgrep6xjx5d4nkqnttdfhmi
+2024-09-16T12:00:17.189+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists giocatore drop constraint if exists FKflch6aw0eiutf1ula6aa0fck5
+Hibernate: alter table if exists giocatore drop constraint if exists FKflch6aw0eiutf1ula6aa0fck5
+2024-09-16T12:00:17.189+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists presidente drop constraint if exists FK69bo2lavr38qf0u9ataj7mw7w
+Hibernate: alter table if exists presidente drop constraint if exists FK69bo2lavr38qf0u9ataj7mw7w
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra drop constraint if exists FKn91ryuiahvtoytoduodgypkjv
+Hibernate: alter table if exists squadra drop constraint if exists FKn91ryuiahvtoytoduodgypkjv
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra drop constraint if exists FKqdp0a8eghmgaefi8qdnw4cwb5
+Hibernate: alter table if exists squadra drop constraint if exists FKqdp0a8eghmgaefi8qdnw4cwb5
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra_giocatori drop constraint if exists FKq7qdegw31khir9nhmom1k6qcx
+Hibernate: alter table if exists squadra_giocatori drop constraint if exists FKq7qdegw31khir9nhmom1k6qcx
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra_giocatori drop constraint if exists FKtqgiv69b97sbb1gpo87a2u5me
+Hibernate: alter table if exists squadra_giocatori drop constraint if exists FKtqgiv69b97sbb1gpo87a2u5me
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop table if exists credentials cascade
+Hibernate: drop table if exists credentials cascade
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop table if exists giocatore cascade
+Hibernate: drop table if exists giocatore cascade
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop table if exists image cascade
+Hibernate: drop table if exists image cascade
+2024-09-16T12:00:17.205+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop table if exists presidente cascade
+Hibernate: drop table if exists presidente cascade
+2024-09-16T12:00:17.221+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop table if exists squadra cascade
+Hibernate: drop table if exists squadra cascade
+2024-09-16T12:00:17.221+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop table if exists squadra_giocatori cascade
+Hibernate: drop table if exists squadra_giocatori cascade
+2024-09-16T12:00:17.221+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop sequence if exists credentials_seq
+Hibernate: drop sequence if exists credentials_seq
+2024-09-16T12:00:17.221+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop sequence if exists giocatore_seq
+Hibernate: drop sequence if exists giocatore_seq
+2024-09-16T12:00:17.231+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop sequence if exists image_seq
+Hibernate: drop sequence if exists image_seq
+2024-09-16T12:00:17.231+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop sequence if exists presidente_seq
+Hibernate: drop sequence if exists presidente_seq
+2024-09-16T12:00:17.231+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : drop sequence if exists squadra_seq
+Hibernate: drop sequence if exists squadra_seq
+2024-09-16T12:00:17.257+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create sequence credentials_seq start with 1 increment by 50
+Hibernate: create sequence credentials_seq start with 1 increment by 50
+2024-09-16T12:00:17.261+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create sequence giocatore_seq start with 1 increment by 50
+Hibernate: create sequence giocatore_seq start with 1 increment by 50
+2024-09-16T12:00:17.265+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create sequence image_seq start with 1 increment by 50
+Hibernate: create sequence image_seq start with 1 increment by 50
+2024-09-16T12:00:17.268+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create sequence presidente_seq start with 1 increment by 50
+Hibernate: create sequence presidente_seq start with 1 increment by 50
+2024-09-16T12:00:17.269+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create sequence squadra_seq start with 1 increment by 50
+Hibernate: create sequence squadra_seq start with 1 increment by 50
+2024-09-16T12:00:17.269+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create table credentials (id bigint not null, presidente_id bigint unique, password varchar(255) not null, role varchar(255), username varchar(255) not null, primary key (id))
+Hibernate: create table credentials (id bigint not null, presidente_id bigint unique, password varchar(255) not null, role varchar(255), username varchar(255) not null, primary key (id))
+2024-09-16T12:00:17.269+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create table giocatore (data_nascita date, numero_maglia integer not null check ((numero_maglia<=99) and (numero_maglia>=0)), titolare boolean not null, id bigint not null, squadra_id bigint, cognome varchar(255) not null, luogo_nascita varchar(255) not null, nome varchar(255) not null, ruolo varchar(255) not null, primary key (id))
+Hibernate: create table giocatore (data_nascita date, numero_maglia integer not null check ((numero_maglia<=99) and (numero_maglia>=0)), titolare boolean not null, id bigint not null, squadra_id bigint, cognome varchar(255) not null, luogo_nascita varchar(255) not null, nome varchar(255) not null, ruolo varchar(255) not null, primary key (id))
+2024-09-16T12:00:17.284+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create table image (id bigint not null, mimetype varchar(255), bytes bytea, primary key (id))
+Hibernate: create table image (id bigint not null, mimetype varchar(255), bytes bytea, primary key (id))
+2024-09-16T12:00:17.284+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create table presidente (data_nascita date, id bigint not null, immagine_id bigint unique, codice_fiscale varchar(255) not null, cognome varchar(255) not null, luogo_nascita varchar(255) not null, nome varchar(255) not null, primary key (id))
+Hibernate: create table presidente (data_nascita date, id bigint not null, immagine_id bigint unique, codice_fiscale varchar(255) not null, cognome varchar(255) not null, luogo_nascita varchar(255) not null, nome varchar(255) not null, primary key (id))
+2024-09-16T12:00:17.292+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create table squadra (anno integer not null check ((anno<=2024) and (anno>=1800)), id bigint not null, immagine_id bigint unique, presidente_id bigint unique, name varchar(255) not null, sede varchar(255) not null, primary key (id))
+Hibernate: create table squadra (anno integer not null check ((anno<=2024) and (anno>=1800)), id bigint not null, immagine_id bigint unique, presidente_id bigint unique, name varchar(255) not null, sede varchar(255) not null, primary key (id))
+2024-09-16T12:00:17.300+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : create table squadra_giocatori (giocatori_id bigint not null unique, squadra_id bigint not null)
+Hibernate: create table squadra_giocatori (giocatori_id bigint not null unique, squadra_id bigint not null)
+2024-09-16T12:00:17.304+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists credentials add constraint FKa8tgrep6xjx5d4nkqnttdfhmi foreign key (presidente_id) references presidente
+Hibernate: alter table if exists credentials add constraint FKa8tgrep6xjx5d4nkqnttdfhmi foreign key (presidente_id) references presidente
+2024-09-16T12:00:17.304+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists giocatore add constraint FKflch6aw0eiutf1ula6aa0fck5 foreign key (squadra_id) references squadra
+Hibernate: alter table if exists giocatore add constraint FKflch6aw0eiutf1ula6aa0fck5 foreign key (squadra_id) references squadra
+2024-09-16T12:00:17.304+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists presidente add constraint FK69bo2lavr38qf0u9ataj7mw7w foreign key (immagine_id) references image
+Hibernate: alter table if exists presidente add constraint FK69bo2lavr38qf0u9ataj7mw7w foreign key (immagine_id) references image
+2024-09-16T12:00:17.304+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra add constraint FKn91ryuiahvtoytoduodgypkjv foreign key (immagine_id) references image
+Hibernate: alter table if exists squadra add constraint FKn91ryuiahvtoytoduodgypkjv foreign key (immagine_id) references image
+2024-09-16T12:00:17.304+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra add constraint FKqdp0a8eghmgaefi8qdnw4cwb5 foreign key (presidente_id) references presidente
+Hibernate: alter table if exists squadra add constraint FKqdp0a8eghmgaefi8qdnw4cwb5 foreign key (presidente_id) references presidente
+2024-09-16T12:00:17.313+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra_giocatori add constraint FKq7qdegw31khir9nhmom1k6qcx foreign key (giocatori_id) references giocatore
+Hibernate: alter table if exists squadra_giocatori add constraint FKq7qdegw31khir9nhmom1k6qcx foreign key (giocatori_id) references giocatore
+2024-09-16T12:00:17.315+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : alter table if exists squadra_giocatori add constraint FKtqgiv69b97sbb1gpo87a2u5me foreign key (squadra_id) references squadra
+Hibernate: alter table if exists squadra_giocatori add constraint FKtqgiv69b97sbb1gpo87a2u5me foreign key (squadra_id) references squadra
+2024-09-16T12:00:17.316+02:00  INFO 1704 --- [siw-federazione] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-16T12:00:17.744+02:00  WARN 1704 --- [siw-federazione] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-16T12:00:17.773+02:00  WARN 1704 --- [siw-federazione] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0c2d8221-35f3-4191-9aa3-9b2b85739fef
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-09-16T12:00:17.773+02:00  WARN 1704 --- [siw-federazione] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-09-16T12:00:17.917+02:00  INFO 1704 --- [siw-federazione] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-09-16T12:00:18.513+02:00 DEBUG 1704 --- [siw-federazione] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-09-16T12:00:19.047+02:00  INFO 1704 --- [siw-federazione] [           main] i.u.f.SiwFederazioneApplicationTests     : Started SiwFederazioneApplicationTests in 5.413 seconds (process running for 6.465)
+2024-09-16T12:00:19.103+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('squadra_seq')
+Hibernate: select nextval('squadra_seq')
+2024-09-16T12:00:19.125+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('presidente_seq')
+Hibernate: select nextval('presidente_seq')
+2024-09-16T12:00:19.133+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('giocatore_seq')
+Hibernate: select nextval('giocatore_seq')
+2024-09-16T12:00:19.141+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('giocatore_seq')
+Hibernate: select nextval('giocatore_seq')
+2024-09-16T12:00:19.166+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.166+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.166+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.166+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.166+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.182+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.261+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('credentials_seq')
+Hibernate: select nextval('credentials_seq')
+2024-09-16T12:00:19.261+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.261+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('squadra_seq')
+Hibernate: select nextval('squadra_seq')
+2024-09-16T12:00:19.261+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('presidente_seq')
+Hibernate: select nextval('presidente_seq')
+2024-09-16T12:00:19.261+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.277+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.339+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('credentials_seq')
+Hibernate: select nextval('credentials_seq')
+2024-09-16T12:00:19.339+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.348+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.348+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.348+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.348+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.355+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.355+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.355+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.355+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.355+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.358+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.419+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.419+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.419+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.419+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.419+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.419+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.429+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.429+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.429+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.429+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.434+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.439+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.439+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.497+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.501+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.509+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.513+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.582+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.582+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : select nextval('giocatore_seq')
+Hibernate: select nextval('giocatore_seq')
+2024-09-16T12:00:19.582+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.587+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.587+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.587+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.587+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.592+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.592+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.592+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.592+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.595+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.655+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.672+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.674+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.680+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.734+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.750+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.829+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.835+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.895+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:19.895+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+Hibernate: insert into presidente (codice_fiscale,cognome,data_nascita,immagine_id,luogo_nascita,nome,id) values (?,?,?,?,?,?,?)
+2024-09-16T12:00:19.895+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+Hibernate: insert into squadra (anno,immagine_id,name,presidente_id,sede,id) values (?,?,?,?,?,?)
+2024-09-16T12:00:19.895+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.895+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.905+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.905+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into giocatore (cognome,data_nascita,luogo_nascita,nome,numero_maglia,ruolo,squadra_id,titolare,id) values (?,?,?,?,?,?,?,?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.907+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.911+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.911+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.911+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.911+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.911+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+Hibernate: insert into squadra_giocatori (squadra_id,giocatori_id) values (?,?)
+2024-09-16T12:00:19.966+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+2024-09-16T12:00:20.018+02:00 DEBUG 1704 --- [siw-federazione] [           main] org.hibernate.SQL                        : insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+Hibernate: insert into credentials (password,presidente_id,role,username,id) values (?,?,?,?,?)
+]]></system-out>
+  </testcase>
+</testsuite>
