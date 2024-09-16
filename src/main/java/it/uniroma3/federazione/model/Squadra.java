@@ -19,16 +19,10 @@ import jakarta.validation.constraints.NotBlank;
 public class Squadra {
 
 	
-	public Presidente getPresidente() {
-		return presidente;
-	}
 
-	public void setPresidente(Presidente presidente) {
-		this.presidente = presidente;
-	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotBlank(message = "Il nome della squadra non può essere nullo")
@@ -114,6 +108,14 @@ public class Squadra {
 
 	public void setGiocatori(List<Giocatore> giocatori) {
 		this.giocatori = giocatori;
+	}
+	
+	public Presidente getPresidente() {
+		return presidente;
+	}
+
+	public void setPresidente(Presidente presidente) {
+		this.presidente = presidente;
 	}
 	
 }

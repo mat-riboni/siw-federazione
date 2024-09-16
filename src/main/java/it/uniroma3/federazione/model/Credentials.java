@@ -18,7 +18,7 @@ public class Credentials {
 	public static final String PRESIDENTE_ROLE = "PRESIDENTE";
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotBlank(message = "Username obbligatorio")
