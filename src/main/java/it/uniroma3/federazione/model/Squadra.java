@@ -17,10 +17,6 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Squadra {
-
-	
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
