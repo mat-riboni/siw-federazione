@@ -20,4 +20,8 @@ public class GiocatoreService {
 		giocatoreRepository.save(giocatore);
 	}
 
+	public void elimina(Long giocatoreId) {
+		giocatoreRepository.deleteById(giocatoreId);
+	}
+
 }

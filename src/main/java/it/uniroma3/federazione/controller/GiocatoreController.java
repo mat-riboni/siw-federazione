@@ -1,9 +1,13 @@
 package it.uniroma3.federazione.controller;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -63,6 +67,21 @@ public class GiocatoreController {
 	    giocatoreService.save(nuovo);
 	    redirectAttributes.addFlashAttribute("successo", "Operazione effettuata!");
 		
+		return "redirect:/squadra/" + squadraId;
+	}
+	
+	@GetMapping("{squadraId}/elimina/{giocatoreId}")
+	public String eliminaGiocatore(@PathVariable Long giocatoreId, @PathVariable Long squadraId) {
+		Squadra squadra = squadraService.findSquadraById(squadraId);
+		List<Giocatore> giocatori = squadra.getGiocatori();
+		Iterator<Giocatore> it = giocatori.iterator();
+		while(it.hasNext()) {
+			if(it.next().getId() == giocatoreId) {
+				it.remove();
+			}
+		}
+		squadra.setGiocatori(giocatori);
+		squadraService.save(squadra);
 		return "redirect:/squadra/" + squadraId;
 	}
 	
