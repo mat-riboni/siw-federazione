@@ -30,7 +30,7 @@ public class AuthController {
 
 
 	@Autowired 
-	private CredentialsService credentialsService;
+	CredentialsService credentialsService;
 
 	@Autowired
 	SquadraService squadraService;
@@ -113,7 +113,19 @@ public class AuthController {
 		model.addAttribute("errori", false);
 	
 		return "admin.html";
+	}
+	
+	@PostMapping("/search")
+	public String registerAdmin() {
 		
-
+		if(!credentialsService.existByUsername("admin")) {
+			Credentials admin = new Credentials();
+			admin.setUsername("admin");
+			admin.setPassword("admin");
+			admin.setRole(Credentials.ADMIN_ROLE);
+			credentialsService.saveCredentials(admin);
+		}
+		
+		return "redirect:/";
 	}
 }

@@ -25,4 +25,10 @@ public class CredentialsService {
 		return credentialsRepository.findByUsername(username).get();
 	}
 	
+    public boolean existByUsername(String username) {
+        return credentialsRepository.existsByUsername(username);
+    }
+	
+
+	
 }

@@ -70,6 +70,7 @@ public class SquadraController {
 			model.addAttribute("isPresidente", false);
 			model.addAttribute("username", credentials.getUsername());
 			model.addAttribute("squadraProprietarioId", null);
+			model.addAttribute("squadre", squadraService.getAll());
 			if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
 				return "redirect:/admin";
 			}
