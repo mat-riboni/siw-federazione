@@ -61,7 +61,7 @@ public class SquadraController {
 			model.addAttribute("isPresidente", false);
 			model.addAttribute("squadraProprietarioId", null);
 			model.addAttribute("squadre", squadraService.getAll());
-			return "index.html";
+			return "index";
 		}
 		else {		
 			UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -79,10 +79,10 @@ public class SquadraController {
 				model.addAttribute("isPresidente", true);
 				model.addAttribute("squadre", squadraService.getAll());
 				model.addAttribute("squadraProprietarioId",credentials.getPresidente().getSquadra().getId());
-				return "index.html";
+				return "index";
 			}
 		}
-		return "index.html";
+		return "index";
 	}
 
 	@GetMapping("/squadra/{id}/immagine")
